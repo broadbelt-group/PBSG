@@ -100,7 +100,7 @@ PBSG reads a `DataFrame` with (a subset of) the following columns:
 
 Registered bead features are cached on disk at `~/.pbsg/bead_registry.json`. This directory is created lazily — only the first time a bead is registered — so importing the package has no side effects. The cache persists across sessions and across projects, so repeat units are only ever featurized once.
 
-## Public API
+## Usage
 
 ```python
 from pbsg.beads import get_or_register_bead, delete_bead, registry, BeadType
