@@ -9,7 +9,7 @@ description = "Polymer Bead Sequence Graphs: a coarse-grained, machine-interpret
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
-authors = [{ name = "Maya Milrod" }]
+authors = [{ name = "Maya Lee Milrod" }]
 keywords = [
     "polymer",
     "cheminformatics",
@@ -26,12 +26,12 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Chemistry",
 ]
 dependencies = [
-    "numpy",
+    "numpy>=1.23",
     "pandas",
     "joblib",
     "rdkit>=2023.3",
-    "torch",
-    "torch-geometric",
+    "torch>=2.3",          # 2.3+ supports NumPy 2.x
+    "torch-geometric>=2.5",
 ]
 
 [project.urls]
