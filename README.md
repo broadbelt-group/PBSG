@@ -6,13 +6,14 @@ PBSG represents a polymer as a sequence graph of **beads**, where each bead is a
 
 ## Why PBSG
 
-PBSG was developed to predict polymer thermal properties (melting temperature `Tm` and crystallizability) from structure. In our work, PBSG graphs outperformed both atomistic molecular graphs and traditional molecular fingerprints, while remaining substantially more computationally efficient than atomistic graphs. A flattened (pooled) form of PBSG also outperformed conventional fingerprints as a feature vector for tree-based models. See [Citation](#citation) for details.
+PBSG was developed to predict polymer melting temperature `Tm` from structure. In our work, PBSG graphs outperformed both atomistic molecular graphs and traditional molecular fingerprints, while remaining substantially more computationally efficient than atomistic graphs. A flattened (pooled) form of PBSG also outperformed conventional fingerprints as a feature vector for tree-based models. See [Citation](#citation) for details.
 
 ## Key ideas
 
 - **A bead is a repeat unit.** Repeat units are written as SMILES with two connection points (`[*]`) marking where the backbone continues.
 - **Features are cached.** The first time a bead is registered, its features are computed and stored in a local registry, so they never need to be recomputed for subsequent polymers that contain the same repeat unit.
-- **Stereochemistry is first-class.** Chiral beads carry separate R and S feature sets. In a generated chain, a side value of `+1` corresponds to R and `-1` to S; achiral beads use `0`. Chain tacticity is produced from `Pm` (probability of meso addition) and/or `ee`.
+- **Stereochemistry is a priority.** Chiral beads carry separate R and S feature sets. In a generated chain, a side value of `+1` corresponds to R and `-1` to S; achiral beads use `0`. Chain stereochemistry/tacticity is produced from `Pm` (probability of meso addition) and/or `ee`.
+- **Reactivity ratios can be input for random copolymers.** Reactivity ratios can be used to build random copolymer chains when provided.
 
 ## Installation
 
