@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Env / tooling
+.venv/
+venv/
+.env
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+
+*.pkl
+!pbsg/ml/pca_morgan.pkl
+!pbsg/ml/pca_rdkit.pkl

@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pbsg"
+version = "0.1.0"
+description = "Polymer Bead Sequence Graphs: a coarse-grained, machine-interpretable polymer representation that accounts for stereochemistry."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Maya Milrod" }]
+keywords = [
+    "polymer",
+    "cheminformatics",
+    "machine-learning",
+    "graph-neural-networks",
+    "rdkit",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Chemistry",
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "joblib",
+    "rdkit>=2023.3",
+    "torch",
+    "torch-geometric",
+]
+
+[project.urls]
+Homepage = "https://github.com/mmilrod/PBSG"
+Repository = "https://github.com/mmilrod/PBSG"
+
+[tool.setuptools.packages.find]
+include = ["pbsg*"]
+
+[tool.setuptools.package-data]
+pbsg = ["ml/*.pkl"]
