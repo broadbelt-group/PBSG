@@ -73,8 +73,9 @@ graph = from_string("A(+)-B-A(-)-C")
 `to_pyg` supports three bead-embedding modes:
 
 - `to_pyg(p)` — default; PCA-compressed fingerprints + descriptors (uses the shipped PCA models).
+- - `to_pyg(p, pca=False)` — full (uncompressed) fingerprints + descriptors.
 - `to_pyg(p, fixed=True)` — fixed-length Morgan + RDKit fingerprints + descriptors (no PCA).
-- `to_pyg(p, pca=False)` — full (uncompressed) fingerprints + descriptors.
+
 
 Pass `stereo=True` to make Morgan fingerprints stereo-sensitive for chiral beads.
 
@@ -94,7 +95,7 @@ PBSG reads a `DataFrame` with (a subset of) the following columns:
 | `ee` | Enantiomeric excess. |
 | `stereo_class` | `isotactic`, `syndiotactic`, `heterotactic`, `atactic`, `achiral`, or `unknown`. |
 | `architecture_onehot` | Architecture encoding (produced by `architecture_onehot`). |
-| `Tm`, `has_Tm`, `Tg`, `has_Tg`, `Xc` | Optional property targets, attached to each polymer graph. |
+| `Tm`, `has_Tm` | Optional property targets, attached to each polymer graph. |
 
 ## The bead registry
 
