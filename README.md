@@ -50,7 +50,7 @@ df["beads_list"]          = df["repeat_units"].apply(parse_smiles_list)
 df["architecture_onehot"] = df.apply(architecture_onehot, axis=1)
 
 # 3. Generate PBSG polymer graphs (chains of `total_chain_length` beads)
-polymers = polymers_from_df(df, total_chain_length=100)
+polymers = polymers_from_df(df, total_chain_length=40)
 
 # 4. Convert each polymer to a PyTorch Geometric `Data` object
 graphs = [to_pyg(p, stereo=True) for p in polymers]
