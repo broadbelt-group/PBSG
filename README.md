@@ -132,7 +132,7 @@ This work is associated with the following manuscript (in preparation):
 > **Stereochemistry-Aware Classification and Regression of Polymer Melting Points Employing Coarse-Grained Representation.**
 > Maya L. Milrod, Kevin M. Shebek, A. Nolan Wilson, Eugene Y.-X. Chen, Tobin J. Marks, and Linda J. Broadbelt.
 
-A BibTeX entry and DOI will be added upon publication.
+A DOI will be added upon publication.
 
 ## License
 
