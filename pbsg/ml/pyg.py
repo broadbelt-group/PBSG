@@ -3,6 +3,7 @@ import logging
 from collections import Counter
 
 import numpy as np
+import pandas as pd
 import torch
 from torch_geometric.data import Data
 from rdkit import Chem
