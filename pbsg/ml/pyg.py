@@ -171,9 +171,34 @@ def architecture_onehot(row):
         vec[arch_map[arch]] = 1.0
     return vec
 
+def classify_stereo(row):
+    pm = row['Pm']
+    if pd.notna(pm):
+        if pm > 0.80: return 'isotactic'
+        if pm < 0.20: return 'syndiotactic'
+        if 0.40 <= pm <= 0.60: return 'atactic'
+        return 'stereo-irregular'  # 0.20-0.40 or 0.60-0.80
+
+    s = row['spatiality_rules']
+    if isinstance(s, list) and len(s) > 0:
+        if s == [1]: return 'isotactic'
+        if s == [-1]: return 'isotactic'
+        if s == ['alt']: return 'syndiotactic'
+        if s == [1, -1]:
+            return 'syndiotactic' if row['polymer_type'] == 'alternating' else 'stereo-irregular'
+        if s == ['ran']: return 'atactic'
+
+    ee = row['ee']
+    if pd.notna(ee):
+        if ee < 0.20: return 'atactic'
+        if ee > 0.80: return 'isotactic'
+        return 'stereo-irregular'
+
+    return 'achiral'
+
 
 def stereo_onehot(ste):
-    stereo_map = {"isotactic": 0, "syndiotactic": 1, "heterotactic": 2,
+    stereo_map = {"isotactic": 0, "syndiotactic": 1, "stereo-irregular": 2,
                   "atactic": 3, "achiral": 4, "unknown": 5}
     vec = np.zeros(6, dtype=np.float32)
     if ste in stereo_map:

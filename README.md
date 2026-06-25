@@ -93,7 +93,7 @@ PBSG reads a `DataFrame` with (a subset of) the following columns:
 | `spatiality_rules` | Per-bead stereo rule: `0` (achiral), `1` (R), `-1` (S), `"alt"`, or `"ran"`. |
 | `Pm` | Probability of meso addition (sets tacticity). |
 | `ee` | Enantiomeric excess. |
-| `stereo_class` | `isotactic`, `syndiotactic`, `heterotactic`, `atactic`, `achiral`, or `unknown`. |
+| `stereo_class` | `isotactic`, `syndiotactic`, `stereo-irregular`, `atactic`, `achiral` |
 | `architecture_onehot` | Architecture encoding (produced by `architecture_onehot`). |
 | `Tm`, `has_Tm` | Optional property targets, attached to each polymer graph. |
 
