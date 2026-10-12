@@ -214,7 +214,7 @@ def _generate_meso(Pm, length: int):
     return sides
 
 
-def polymers_from_df(df, total_chain_length) -> list:
+def polymers_from_df(df, total_chain_length, seed) -> list:
     """
     Generate list of PolymerGraph objects from dataframe.
     """
@@ -232,6 +232,7 @@ def polymers_from_df(df, total_chain_length) -> list:
                 Pm=row.get('Pm'),
                 ee=row.get('ee'),
                 total_chain_length=total_chain_length,
+                seed=seed,
             )
 
             # Attach thermal properties
@@ -252,9 +253,9 @@ def polymers_from_df(df, total_chain_length) -> list:
     return polymers
 
 
-def smiles_from_graphs(df, total_chain_length):
+def smiles_from_graphs(df, total_chain_length, seed):
     """Generate polymer SMILES dataframe."""
-    polymers = polymers_from_df(df, total_chain_length)
+    polymers = polymers_from_df(df, total_chain_length, seed=seed)
     for p in polymers:
         p.p_smiles = _build_polymer(p, registry)
     rows = []

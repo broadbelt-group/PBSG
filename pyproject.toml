@@ -35,8 +35,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/mmilrod/PBSG"
-Repository = "https://github.com/mmilrod/PBSG"
+Homepage = "https://github.com/broadbelt-group/PBSG"
+Repository = "https://github.com/broadbelt-group/PBSG"
 
 [tool.setuptools.packages.find]
 include = ["pbsg*"]
