@@ -129,8 +129,8 @@ from pbsg.ml.pyg import architecture_onehot
 
 This work is associated with the following manuscript (in preparation):
 
-> **Stereochemistry-Aware Classification and Regression of Polymer Melting Points Employing Coarse-Grained Representation.**
-> Maya L. Milrod, Kevin M. Shebek, A. Nolan Wilson, Eugene Y.-X. Chen, Tobin J. Marks, and Linda J. Broadbelt.
+> **Stereochemistry-Aware Classification and Regression of Polymer Melting Temperatures.**
+> Maya L. Milrod, Kevin M. Shebek, A. Nolan Wilson, Keith E.-J. Tyo, Eugene Y.-X. Chen, Tobin J. Marks, and Linda J. Broadbelt.
 
 A DOI will be added upon publication.
 
